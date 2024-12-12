@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file path="eth_pll_sim/eth_pll.vo" type="VERILOG" />
+ <topLevel name="eth_pll" />
+ <deviceFamily name="cyclonev" />
+</simPackage>

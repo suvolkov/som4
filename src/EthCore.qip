@@ -1,0 +1,31 @@
+# -------------------------------------------------------------------------- #
+#
+# This QIP file defines all necessary files for Bolshakiv EthCore
+#
+# -------------------------------------------------------------------------- #
+set CorePath src/EthCore
+
+set_global_assignment -name SYSTEMVERILOG_FILE $CorePath/arm_dma.sv
+set_global_assignment -name SYSTEMVERILOG_FILE $CorePath/vector_mem_sync.sv
+set_global_assignment -name SYSTEMVERILOG_FILE $CorePath/vector_reg_sync.sv
+set_global_assignment -name SYSTEMVERILOG_FILE $CorePath/vector_fifo_sync.sv
+set_global_assignment -name SYSTEMVERILOG_FILE $CorePath/eth_ip_core_export.sv
+set_global_assignment -name SYSTEMVERILOG_FILE $CorePath/packets_rx_queue.sv
+set_global_assignment -name SYSTEMVERILOG_FILE $CorePath/packets_tx_queue.sv
+set_global_assignment -name SYSTEMVERILOG_FILE $CorePath/ram2port.sv
+set_global_assignment -name SYSTEMVERILOG_FILE $CorePath/avl_export.sv
+set_global_assignment -name SYSTEMVERILOG_FILE $CorePath/mdio_module.sv
+set_global_assignment -name SYSTEMVERILOG_FILE $CorePath/eth_ip_core.sv
+set_global_assignment -name VERILOG_FILE $CorePath/altsource_probe/hps_reset.v
+set_global_assignment -name VERILOG_FILE $CorePath/edge_detect/altera_edge_detector.v
+set_global_assignment -name SYSTEMVERILOG_FILE $CorePath/typesPkg.sv
+set_global_assignment -name SYSTEMVERILOG_FILE $CorePath/params.sv
+set_global_assignment -name SYSTEMVERILOG_FILE $CorePath/mii_module.sv
+set_global_assignment -name SYSTEMVERILOG_FILE $CorePath/delay_chain.sv
+set_global_assignment -name SYSTEMVERILOG_FILE $CorePath/delay_mem.sv
+set_global_assignment -name SYSTEMVERILOG_FILE $CorePath/rx_filter.sv
+
+set_global_assignment -name QIP_FILE $CorePath/eth_pll/eth_pll.qip
+set_global_assignment -name QIP_FILE $CorePath/eth_pll_reconf/eth_pll_reconf.qip
+
+set_global_assignment -name VERILOG_FILE $CorePath/phy_reset_block/phy_reset_block.v
