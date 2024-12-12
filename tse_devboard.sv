@@ -33,73 +33,54 @@ module tse_devboard
 (* chip_pin = "D25" *)	input  wire        hps_memory_oct_rzqin,      /*???*/                 
 
 (* chip_pin = "U11, T11, AE9, AD10 " *)	input wire	[3:0]	fpga_enet0_rx_d,
-	//input wire			fpga_enet0_rx_error,
 (* chip_pin = "AF4" *)	input wire			fpga_enet0_rx_dv,
 (* chip_pin = "AE4" *) 	input wire			fpga_enet0_rx_clk,
 (* chip_pin = "AE11, AD11, AF9, AE8" *)	output wire	[3:0]	fpga_enet0_tx_d,
 (* chip_pin = "AF8" *)	output wire			fpga_enet0_tx_en,
 (* chip_pin = "AE7" *)	input wire			fpga_enet0_tx_clk,
-	//output wire			fpga_enet0_tx_error,
 (* chip_pin = "AG5" *)	output wire			RGMII_0_1_RESETn,
 (* chip_pin = "AH4" *)	inout wire			RGMII_0_1_MDIO0,
 (* chip_pin = "AE12" *)	inout wire			RGMII_0_1_MDIO1,
 	
 //(* chip_pin = ??? *)	output wire			fpga_enet1_gtx_clk,
-	//input wire			fpga_enet3_tx_clk_fb,
 (* chip_pin = "AG6, AF7, AF6, AF5" *)	input wire	[3:0]	fpga_enet1_rx_d,
-	//input wire			fpga_enet1_rx_error,
 (* chip_pin = "W11" *)	input wire			fpga_enet1_rx_dv,
 (* chip_pin = "V11" *)	input wire			fpga_enet1_rx_clk,
 (* chip_pin = "AH2, AH3, T12, T13" *)	output wire	[3:0]	fpga_enet1_tx_d,
 (* chip_pin = "AF10" *)	output reg			fpga_enet1_tx_en,
 (* chip_pin = "AF11" *)	input wire			fpga_enet1_tx_clk,
-	//output wire			fpga_enet1_tx_error,
 
-	//(* chip_pin = ??? *)	output wire			fpga_enet2_gtx_clk,
-	// PHY1 interface (uPD60620 P0 interface)
-	//input wire			fpga_enet0_tx_clk_fb,
+//(* chip_pin = ??? *)	output wire			fpga_enet2_gtx_clk,
 (* chip_pin = "U13, U14, AF13, AG13" *)	input wire	[3:0]	fpga_enet2_rx_d,
-	//input wire			fpga_enet0_rx_error,
 (* chip_pin = "AH7" *)	input wire			fpga_enet2_rx_dv,
 (* chip_pin = "AG8" *) 	input wire			fpga_enet2_rx_clk,
 (* chip_pin = "AE15, AF15, AH9, AG10" *)	output wire	[3:0]	fpga_enet2_tx_d,
 (* chip_pin = "AH8" *)	output wire			fpga_enet2_tx_en,
 (* chip_pin = "AG9" *)	input wire			fpga_enet2_tx_clk,
-	//output wire			fpga_enet0_tx_error,
 	
 //(* chip_pin = ??? *)	output wire			fpga_enet3_gtx_clk,
-	//input wire			fpga_enet3_tx_clk_fb,
 (* chip_pin = "AF17, AH12, AH11, AG11" *)	input wire	[3:0]	fpga_enet3_rx_d,
-	//input wire			fpga_enet1_rx_error,
 (* chip_pin = "AA13" *)	input wire			fpga_enet3_rx_dv,
 (* chip_pin = "Y13" *)	input wire			fpga_enet3_rx_clk,
 (* chip_pin = "AG15, AH13, AG14, V13" *)	output wire	[3:0]	fpga_enet3_tx_d,
 (* chip_pin = "W14" *)	output wire			fpga_enet3_tx_en,
 (* chip_pin = "AG16" *)	input wire			fpga_enet3_tx_clk,
-	//output wire			fpga_enet1_tx_error,
 
 //(* chip_pin = ??? *)	output wire			fpga_enet4_gtx_clk,
-	// PHY1 interface (uPD60620 P0 interface)
-	//input wire			fpga_enet0_tx_clk_fb,
 (* chip_pin = "AH17, AA15, Y15, AE17" *)	input wire	[3:0]	fpga_enet4_rx_d,
-	//input wire			fpga_enet0_rx_error,
 (* chip_pin = "AD17" *)	input wire			fpga_enet4_rx_dv,
 (* chip_pin = "AH14" *)	input wire			fpga_enet4_rx_clk,
 (* chip_pin = "AA18, AA19, AD19, AE19" *)	output wire	[3:0]	fpga_enet4_tx_d,
 (* chip_pin = "AF18" *)	output wire			fpga_enet4_tx_en,
 (* chip_pin = "AH16" *)	input wire			fpga_enet4_tx_clk,
-	//output wire			fpga_enet0_tx_error,
 	
 //(* chip_pin = ??? *)	output wire			fpga_enet5_gtx_clk,
-	//input wire			fpga_enet3_tx_clk_fb,
 (* chip_pin = "AD20, AE20, AH19, AG19" *)	input wire	[3:0]	fpga_enet5_rx_d,
-	//input wire			fpga_enet1_rx_error,
 (* chip_pin = "AH18" *)	input wire			fpga_enet5_rx_dv,
 (* chip_pin = "AG18" *)	input wire			fpga_enet5_rx_clk,
 (* chip_pin = "AD23, AF21, AF22, AG21" *)	output wire	[3:0]	fpga_enet5_tx_d,
 (* chip_pin = "AG20" *)	output wire			fpga_enet5_tx_en,
 (* chip_pin = "AF20" *)	input wire			fpga_enet5_tx_clk,
-	//output wire			fpga_enet1_tx_error,
 
 //(* chip_pin = "AG18" *)	output wire			RGMII_2_5_RESETn,
 //(* chip_pin = "AH18" *)	inout wire			RGMII_2_5_MDIO0,
@@ -120,33 +101,27 @@ module tse_devboard
 (* chip_pin = "W15" *)	inout wire 			fpga_spi_cs,
 (* chip_pin = "AC24" *)	output wire 		fpga_spi_clk,
 
-//(* chip_pin = "AA24" *)	inout wire 			fpga_irig0,
-//(* chip_pin = "AA23" *)	inout wire 			fpga_irig1,
+(* chip_pin = "AA24" *)	inout wire 			fpga_irig0,
+(* chip_pin = "AA23" *)	inout wire 			fpga_irig1,
 
-(* chip_pin = "U10" *)	output wire 		hps_uart2_TX,
-(* chip_pin = "AB4" *)	input wire 			hps_uart2_RX,
-(* chip_pin = "AA4" *)	output wire 		hps_uart2_CTS,
-(* chip_pin = "V10" *)	input wire 			hps_uart2_RTS,
+//(* chip_pin = "U10" *)	output wire 		hps_uart2_TX,
+//(* chip_pin = "AB4" *)	input wire 			hps_uart2_RX,
+//(* chip_pin = "AA4" *)	output wire 		hps_uart2_CTS,
+//(* chip_pin = "V10" *)	input wire 			hps_uart2_RTS,
 
-//(* chip_pin = "AA4" *)	inout wire			fpga_uart_de,
-//(* chip_pin = "AB4" *)	inout wire			fpga_uart_rx,
-//(* chip_pin = "U10" *)	inout wire			fpga_uart_tx,
-//(* chip_pin = "V10" *)	inout wire			fpga_uart_re,
+(* chip_pin = "AA4" *)	inout wire			fpga_uart_de,
+(* chip_pin = "AB4" *)	inout wire			fpga_uart_rx,
+(* chip_pin = "U10" *)	inout wire			fpga_uart_tx,
+(* chip_pin = "V10" *)	inout wire			fpga_uart_re,
 //
 //(* chip_pin = "AC4" *)	inout wire			fpga_1pps,
 //
-//(* chip_pin = "AC24" *)	inout wire			fpga_spi_clk,
-//(* chip_pin = "AB23" *)	inout wire			fpga_spi_mosi,
-//(* chip_pin = "Y16" *)	inout wire			fpga_spi_miso,
-//(* chip_pin = "W15" *)	inout wire			fpga_spi_cs,
-//(* chip_pin = "AA24" *)	inout wire			fpga_spi_iriq0,
-//(* chip_pin = "AA23" *)	inout wire			fpga_spi_iriq1,
-//
-//(* chip_pin = "AF26" *)	inout wire			fpga_rf0,
-//(* chip_pin = "AE26" *)	inout wire			fpga_rf1,
-//(* chip_pin = "AA20" *)	inout wire			fpga_rf2,
-//(* chip_pin = "Y19"  *)	inout wire			fpga_rf3,
-//(* chip_pin = "AE25" *)	inout wire			fpga_rf4,
+
+(* chip_pin = "AF26" *)	inout wire			fpga_rf0,
+(* chip_pin = "AE26" *)	inout wire			fpga_rf1,
+(* chip_pin = "AA20" *)	inout wire			fpga_rf2,
+(* chip_pin = "Y19"  *)	inout wire			fpga_rf3,
+(* chip_pin = "AE25" *)	inout wire			fpga_rf4,
   /* HPS UART */
 
   /* HPS SD card*/
@@ -164,7 +139,7 @@ module tse_devboard
 (* chip_pin = "F4" *)	inout  wire        hps_usb1_D7,        //(8)USB DATA 7
 (* chip_pin = "C6" *)	inout  wire        hps_usb1_RST,       //(9)USB RST 
 (* chip_pin = "G4" *)	input  wire        hps_usb1_CLK,       //(10)USB CLK
-(* chip_pin = "C5" *)	output  wire        hps_usb1_STP,       //(11)USB STP
+(* chip_pin = "C5" *)	output  wire       hps_usb1_STP,       //(11)USB STP
 (* chip_pin = "E5" *)	input  wire        hps_usb1_DIR,       //(12)USB DIR
 (* chip_pin = "D5" *)	input  wire        hps_usb1_NXT,       //(13)USB NXT
 
@@ -209,15 +184,6 @@ module tse_devboard
 (* chip_pin = "A6" *)		output  wire 		 hps_io_hps_io_qspi_inst_SS0,	// GPIO33
 (* chip_pin = "C14" *)		output  wire 		 hps_io_hps_io_qspi_inst_CLK,	// GPIO34
 
-
-//(* chip_pin = "A8" *)		inout  wire 		 hps_io_gpio_inst_GPIO29,	// GPIO29 QSPI IO0
-//(* chip_pin = "H16" *)	inout  wire 		 hps_io_gpio_inst_GPIO30,	// GPIO30 QSPI IO1
-//(* chip_pin = "A7" *)		inout  wire 		 hps_io_gpio_inst_GPIO31,	// GPIO31 QSPI IO2
-//(* chip_pin = "J16" *)	inout  wire 		 hps_io_gpio_inst_GPIO32,	// GPIO32 QSPI IO3
-	
-//(* chip_pin = "A6" *)		inout  wire 		 hps_io_gpio_inst_GPIO33,	// GPIO33 QSPI SS0 flash_DC
-
-//(* chip_pin = "C14" *)	inout  wire 		 hps_io_gpio_inst_GPIO34,	// GPIO34 QSPI CLK
 //(* chip_pin = "B14" *)	inout  wire 		 hps_io_gpio_inst_GPIO35,	// GPIO35 QSPI SS1
 
 (* chip_pin = "D14" *)	inout  wire        hps_sdio_CMD, 	// (36)eMMC CMD      
@@ -420,6 +386,17 @@ wire hps_emac1_rx_reset_reset_n;
  //wire gmii1_phy_tx_clk_o;
 // wire gmii1_phy_tx_clk_i;
 // wire gmii1_phy_rx_clk_i;
+
+//wire hps_qspi_mo0;
+//wire hps_qspi_mo1;
+//wire hps_qspi_mo2;
+//wire hps_qspi_mo3;
+//wire [3:0] hps_qspi_n_mo_en;
+//assign fpga_sd_data0=hps_qspi_n_mo_en[0]?hps_qspi_mo0:1'bz;
+//assign fpga_sd_data1=hps_qspi_n_mo_en[1]?hps_qspi_mo1:1'bz;
+//assign fpga_sd_data2=hps_qspi_n_mo_en[2]?hps_qspi_mo2:1'bz;
+//assign fpga_sd_data3=hps_qspi_n_mo_en[3]?hps_qspi_mo3:1'bz;
+
  tse_devboard_hps hps (
   //.clk_100_clk                    (CLK_100),
   .pll_0_locked_export            (pll_lock), // HPS->FPGA
@@ -545,21 +522,25 @@ wire hps_emac1_rx_reset_reset_n;
 	
 			//.hps_can0_rxd(),
 			//.hps_can0_txd(),
-			.uart_0_external_connection_rxd		(hps_uart2_RX),
-			.uart_0_external_connection_txd		(hps_uart2_TX),
-			.uart_0_external_connection_cts_n	(hps_uart2_CTS),
-			.uart_0_external_connection_rts_n	(hps_uart2_RTS),
+//			.uart_0_external_connection_rxd		(hps_uart2_RX),
+//			.uart_0_external_connection_txd		(hps_uart2_TX),
+//			.uart_0_external_connection_cts_n	(hps_uart2_CTS),
+//			.uart_0_external_connection_rts_n	(hps_uart2_RTS),
+			.uart_0_external_connection_rxd		(fpga_uart_rx),
+			.uart_0_external_connection_txd		(fpga_uart_tx),
+			.uart_0_external_connection_cts_n	(fpga_uart_de),
+			.uart_0_external_connection_rts_n	(fpga_uart_re),
 
-//			.hps_qspi_mi0(hps_qspi_mi0),
-//			.hps_qspi_mi1(hps_qspi_mi0),
-//			.hps_qspi_mi2(hps_qspi_mi0),
-//			.hps_qspi_mi3(hps_qspi_mi0),
+//			.hps_qspi_mi0(fpga_sd_data0),
+//			.hps_qspi_mi1(fpga_sd_data1),
+//			.hps_qspi_mi2(fpga_sd_data2),
+//			.hps_qspi_mi3(fpga_sd_data3),
 //			.hps_qspi_mo0(hps_qspi_mo0),
-//			.hps_qspi_mo1(hps_qspi_mo0),
-//			.hps_qspi_mo2_wpn(hps_qspi_mo0),
-//			.hps_qspi_mo3_hold(hps_qspi_mo0),
+//			.hps_qspi_mo1(hps_qspi_mo1),
+//			.hps_qspi_mo2_wpn(hps_qspi_mo2),
+//			.hps_qspi_mo3_hold(hps_qspi_mo3),
 //			.hps_qspi_n_mo_en(hps_qspi_n_mo_en),	//4
-//			.hps_qspi_n_ss_out(hps_qspi_n_mo_en),//4
+//			.hps_qspi_n_ss_out(hps_qspi_n_ss_out),	//4
 			
   /* PLL control signals */
   .pll_cntrl_clk                  (),
@@ -773,10 +754,6 @@ wire hps_emac1_rx_reset_reset_n;
   .eth_cntrl_3_rdata              (eth_cntrl_D_rdata),
   .eth_cntrl_3_irq                (eth_cntrl_D_irq),
   .eth_cntrl_3_wrq                (eth_cntrl_D_wrq)
-
-`ifdef USE6CH
-  
-`endif	// USE6CH
 
   /* HPS GPIO */
 

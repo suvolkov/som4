@@ -205,25 +205,28 @@ set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 8A
 #set_instance_assignment -name IO_STANDARD "1.8 V" -to fpga_sd_data2
 #set_instance_assignment -name IO_STANDARD "1.8 V" -to fpga_sd_data3
 #
-#set_instance_assignment -name IO_STANDARD "1.8 V" -to fpga_uart_de
-#set_instance_assignment -name IO_STANDARD "1.8 V" -to fpga_uart_rx
-#set_instance_assignment -name IO_STANDARD "1.8 V" -to fpga_uart_tx
-#set_instance_assignment -name IO_STANDARD "1.8 V" -to fpga_uart_re
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_uart_de
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_uart_rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_uart_tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_uart_re
 #
 #set_instance_assignment -name IO_STANDARD "1.8 V" -to fpga_1pps
 #
-#set_instance_assignment -name IO_STANDARD "1.8 V" -to fpga_spi_clk
-#set_instance_assignment -name IO_STANDARD "1.8 V" -to fpga_spi_miso
-#set_instance_assignment -name IO_STANDARD "1.8 V" -to fpga_spi_mosi
-#set_instance_assignment -name IO_STANDARD "1.8 V" -to fpga_spi_cs
-#set_instance_assignment -name IO_STANDARD "1.8 V" -to fpga_spi_iriq0
-#set_instance_assignment -name IO_STANDARD "1.8 V" -to fpga_spi_iriq1
+#============================================================
+# HPS SPI FPGA
+#============================================================
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to fpga_spi_mosi
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to fpga_spi_miso
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to fpga_spi_cs
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to fpga_spi_clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to fpga_irig0
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to fpga_irig1
 #
-#set_instance_assignment -name IO_STANDARD "1.8 V" -to fpga_rf0
-#set_instance_assignment -name IO_STANDARD "1.8 V" -to fpga_rf1
-#set_instance_assignment -name IO_STANDARD "1.8 V" -to fpga_rf2
-#set_instance_assignment -name IO_STANDARD "1.8 V" -to fpga_rf3
-#set_instance_assignment -name IO_STANDARD "1.8 V" -to fpga_rf4
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_rf0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_rf1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_rf2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_rf3
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_rf4
 
 #set_instance_assignment -name IO_STANDARD "1.8-V LVTTL" -to hps_io_gpio_inst_GPIO0
 #set_instance_assignment -name IO_STANDARD "1.8 V" -to hps_io_gpio_inst_GPIO00
@@ -242,17 +245,10 @@ set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 8A
 #set_instance_assignment -name IO_STANDARD "1.8 V" -to hps_usb1_DIR
 #set_instance_assignment -name IO_STANDARD "1.8 V" -to hps_usb1_NXT
 #set_instance_assignment -name IO_STANDARD "1.8 V" -to hps_usb1_RST
+
 #============================================================
 # HPS QSPI
 #============================================================
-
-#set_instance_assignment -name IO_STANDARD "1.8 V" -to HPS_FLASH_DATA[0]
-#set_instance_assignment -name IO_STANDARD "1.8 V" -to HPS_FLASH_DATA[1]
-#set_instance_assignment -name IO_STANDARD "1.8 V" -to HPS_FLASH_DATA[2]
-#set_instance_assignment -name IO_STANDARD "1.8 V" -to HPS_FLASH_DATA[3]
-#set_instance_assignment -name IO_STANDARD "1.8 V" -to HPS_FLASH_DCLK
-#set_instance_assignment -name IO_STANDARD "1.8 V" -to HPS_FLASH_NCSO
-#set_instance_assignment -name IO_STANDARD "1.8 V" -to HPS_FLASH_NCS1
 
 #============================================================
 # HPS UART
@@ -442,13 +438,6 @@ set_instance_assignment -name IO_STANDARD "2.5-V" -to hps_io_hps_io_qspi_inst_IO
 set_instance_assignment -name IO_STANDARD "2.5-V" -to hps_io_hps_io_qspi_inst_CLK
 set_instance_assignment -name IO_STANDARD "2.5-V" -to hps_io_hps_io_qspi_inst_CMD
 
-#============================================================
-# HPS SPI FPGA
-#============================================================
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to fpga_spi_mosi
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to fpga_spi_miso
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to fpga_spi_cs
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to fpga_spi_clk
 #============================================================
 # HPS I2C
 #============================================================
@@ -1074,6 +1063,5 @@ set_global_assignment -name SDC_FILE tse_devboard.sdc
 set_global_assignment -name SYSTEMVERILOG_FILE tse_devboard.sv
 set_global_assignment -name QIP_FILE src/EthCore/cross_fifo/cross_fifo.qip
 set_global_assignment -name QIP_FILE src/EthCore/tx_mii_fifo/tx_mii_fifo.qip
-set_global_assignment -name SIGNALTAP_FILE signaltap/out_of_reset.stp
 #set_instance_assignment -name OUTPUT_TERMINATION "SERIES 40 OHM WITHOUT CALIBRATION" -to hps_memory_oct_rzqin -tag __hps_sdram_p0
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
